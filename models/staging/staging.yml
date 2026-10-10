@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: stg_sales
+    description: "Ventas tipadas y estandarizadas."
+    columns:
+      - name: sale_id
+        tests:
+          - not_null
+          - unique
+
+      - name: product_id
+        tests:
+          - not_null
+
+      - name: sales_amount
+        tests:
+          - not_null
+
+  - name: stg_products
+    description: "Maestro de productos limpio."
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+
+      - name: product_name
+        tests:
+          - not_null
